@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GO-ENGLISH: Naučte se anglicky!</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 70px 0 0;
+      background-color: #ffffff;
+    }
+    header {
+      width: 100%;
+      background-color: #ff9fa0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20px;
+      height: auto;
+      transition: opacity 0.3s;
+    }
+    .logo {
+      position: absolute;
+      left: 20px;
+    }
+    .logo img {
+      width: 50px;
+      height: auto;
+    }
+    .menu {
+      margin-top: 10px;
+    }
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu ul li {
+      margin-right: 20px;
+      position: relative;
+    }
+    .menu ul li:last-child {
+      margin-right: 0;
+    }
+    .menu ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      position: relative;
+    }
+    .menu ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      display: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu ul li:hover ul {
+      display: block;
+    }
+    .menu ul li ul li {
+      margin-top: 5px;
+    }
+    .menu ul li ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    footer {
+      background-color: #ff9fa0;
+      padding: 0px;
+      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .footer-links {
+      text-align: right;
+    }
+    .footer-links h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .footer-links ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links ul li {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .about-us {
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+      color: #ffffff;
+    }
+    .about-us p {
+      margin-top: 0;
+    }
+    .social-icons {
+      display: flex;
+      align-items: center;
+    }
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    .main-content {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .main-content-text {
+      flex: 1;
+    }
+    .main-content-photo {
+      flex: 1;
+      text-align: right;
+    }
+    .main-content-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .main-content-right {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .main-content-text-right {
+      text-align: center;
+    }
+    .main-content-photo-left {
+      text-align: center;
+    }
+    .main-content-photo-left img {
+      width: 50%;
+      height: auto;
+      display: float;
+    }
+    .fade {
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+    .contact-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .contact-details, .map, .contact-form {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+    .contact-details {
+      border: 2px solid #ff9fa0;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .contact-details p {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .contact-details i {
+      color: #ff9fa0;
+      margin-right: 10px;
+    }
+    .map {
+      height: 400px;
+    }
+    .contact-form {
+      border: 2px solid #ff9fa0;
+      border-radius: 8px;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    .contact-form h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    .contact-form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      padding: 10px 15px;
+      background-color: #ff9fa0;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #ff6f6f;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <img src="Vajprik-2.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="home.html">Domů</a></li>
+        <li><a href="#">Doučování</a>
+            <ul>
+                <li><a href="online.html">On-line</a></li>
+                <li><a href="maturita.html">Maturita</a></li>
+                <li><a href="cambridge.html">Cambridge</a></li>
+            </ul>
+        </li>
+        <li><a href="materialy.html">Materiály</a></li>
+        <li><a href="nas-tym.html">Náš tým</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="contact-section">
+    <div class="contact-details">
+      <h3>Kontakt</h3>
+      <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+420777491426"> +420 777 491 426</a></p>
+      <p><i class="fas fa-envelope"></i> Email: <a href="mailto:dylan.prachar@icloud.com"> dylan.prachar@icloud.com</a></p>
+      <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/goenglish.lessons" target="_blank"> Sledujte nás!</a></p>
+      <p><i class="fab fa-facebook"></i> Facebook: <a href="https://www.facebook.com/goenglish.lessons" target="_blank"> Novinky</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Adresa: M. Majerové 720/25, Třebíč 674 01</p>
+    </div>
+    <div class="map">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14880.41851620831!2d15.8739744!3d49.2144597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d15e8a742bcf7%3A0x400f1a3f411d80!2sT%C5%99eb%C3%AD%C4%8D!5e0!3m2!1scs!2scz!4v1691702269673!5m2!1scs!2scz" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <div class="contact-form">
+      <h3>Napište nám</h3>
+      <form action="mailto:dylan.prachar@icloud.com" method="post" enctype="text/plain">
+        <label for="name">Jméno:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Zpráva:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Odeslat</button>
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class="about-us">
+      <h3>About Us</h3>
+      <p>
+        Extrémně moc lidí nemluví anglicky. Tak jsme se rozhodli to změnit.
+        <br>
+        Dva kluci, toužící naučit čechy mluvit anglicky.
+      </p>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2024 GO-ENGLISH All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function handleScroll() {
+        const header = document.querySelector('header');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+          header.style.opacity = 0.7; // Lower opacity when scrolling down
+        } else {
+          header.style.opacity = 1; // Full opacity when at the top
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+    });
+  </script>
+</body>
+</html>

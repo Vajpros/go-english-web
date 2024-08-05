@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GO-ENGLISH: Naučte se anglicky!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 120px 0 0;
+      background-color: #ffffff;
+    }
+    header {
+      width: 100%;
+      background-color: #ff9fa0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20px;
+      height: auto;
+    }
+    .logo img {
+      width: 100px;
+      height: auto;
+    }
+    .menu {
+      margin-top: 10px;
+    }
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu ul li {
+      margin-right: 20px;
+      position: relative;
+    }
+    .menu ul li:last-child {
+      margin-right: 0;
+    }
+    .menu ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+      position: relative;
+    }
+    .menu ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      display: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu ul li:hover ul {
+      display: block;
+    }
+    .menu ul li ul li {
+      margin-top: 5px;
+    }
+    .menu ul li ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .menu-scrolled {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .header-slider {
+      position: relative;
+      width: 100%;
+      height: 550px;
+      overflow: hidden;
+    }
+    .header-slides {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+    .header-slide {
+      min-width: 100%;
+      height: 550px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .header-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .header-text h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .header-text a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff9fa0;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ffffff;
+      border: 3px solid #ff9fa0;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
+    }
+    .arrow svg {
+      width: 20px;
+      height: 20px;
+      fill: #ff9fa0;
+    }
+    .main-content {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .main-content-text {
+      flex: 1;
+    }
+    .main-content-photo {
+      flex: 1;
+      text-align: right;
+    }
+    .main-content-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .reviews {
+      padding: 20px;
+      background-color: #ff9fa0;
+      position: relative;
+    }
+    
+    .reviews h2 {
+      text-align: center;
+      color: #ffffff;
+    }
+    
+    .review-container {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .review-items {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+    
+    .review-item {
+      flex: 0 0 auto;
+      width: 250px;
+      background: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-size: 14px;
+      line-height: 1.5;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+    
+    .review-item:hover {
+      background-color: #f0f0f0;
+    }
+    .why-us {
+      padding: 20px;
+      background-color: #ffffff;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+    }
+    
+    .why-us h2 {
+      text-align: center;
+      color: #ff9fa0;
+      font-size: 2em;
+    }
+    
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+    
+    .grid-item {
+      text-align: center;
+      padding: 15px;
+      border: 2px solid #ff9fa0;
+      border-radius: 10px;
+      color: #ff9fa0;
+      font-size: 16px;
+      font-weight: bold;
+      background: none;
+    }
+    
+    .grid-item svg {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 10px;
+      fill: #ff9fa0;
+    }
+    .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    footer {
+      background-color: #ff9fa0;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .footer-links {
+      text-align: left;
+      width: 100%;
+    }
+    .footer-links h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .footer-links ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links ul li {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .footer-links ul li a {
+      color: white;
+      text-decoration: none;
+    }
+    .about-us {
+      width: 100%;
+      text-align: center;
+      color: #ffffff;
+    }
+    .about-us p {
+      margin-top: 0;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ffffff;
+      border: 3px solid #ff9fa0;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    
+    .arrow-left {
+      left: 10px;
+    }
+    
+    .arrow-right {
+      right: 10px;
+    }
+    
+    .arrow svg {
+      width: 20px;
+      height: 20px;
+      fill: #ff9fa0;
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="logo">
+      <img src="GO.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="home.html">Domů</a></li>
+        <li><a href="#">Doučování</a>
+            <ul>
+                <li><a href="online.html">On-line</a></li>
+                <li><a href="maturita.html">Maturita</a></li>
+                <li><a href="cambridge.html">Cambridge</a></li>
+            </ul>
+        </li>
+        <li><a href="materialy.html">Materiály</a></li>
+        <li><a href="nas-tym.html">Náš tým</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="header-slider">
+    <div class="header-slides">
+      <div class="header-slide" style="background-image: url('BAR3adb4b_125614_1446082.jpg');">
+        <div class="header-text">
+          <h1>Čeká Vás maturita? Připravte se s námi!</h1>
+          <a href="maturita.html">Začněte nyní</a>
+        </div>
+      </div>
+      <div class="header-slide" style="background-image: url('graaf.png');">
+        <div class="header-text">
+          <h1>Chytsáte se složit zkoušku na FCE? Pomůžeme Vám!</h1>
+          <a href="cambridge.html">Prozkoumejte kurzy</a>
+        </div>
+      </div>
+      <div class="header-slide" style="background-image: url('anglictina-gramatika.jpg');">
+        <div class="header-text">
+          <h1>Začněte svou jazykovou cestu dnes!</h1>
+          <a href="online.html">Zjistit více</a>
+        </div>
+      </div>
+    </div>
+    <div class="arrow arrow-left">
+      <svg viewBox="0 0 24 24">
+        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+      </svg>
+    </div>
+    <div class="arrow arrow-right">
+      <svg viewBox="0 0 24 24">
+        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content-text">
+      <h2>O naší škole</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.</p>
+    </div>
+    <div class="main-content-photo">
+      <img src="photo.jpg" alt="Photo">
+    </div>
+  </div>
+
+  <div class="reviews">
+    <h2>Co říkají naši studenti</h2>
+    <div class="review-container">
+      <div class="review-items">
+        <div class="review-item">
+          <p>"Go-English mi pomohl zlepšit mou angličtinu rychle a efektivně!"</p>
+        </div>
+        <div class="review-item">
+          <p>"Lektori jsou skvělí a kurzy jsou velmi zábavné!"</p>
+        </div>
+        <div class="review-item">
+          <p>"Doporučuji Go-English každému, kdo se chce naučit anglicky."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-us">
+    <h2>Proč si vybrat nás</h2>
+    <div class="why-us-grid">
+      <div class="grid-item">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+        <p>Rychlost</p>
+      </div>
+      <div class="grid-item">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+        <p>Kvalita</p>
+      </div>
+      <div class="grid-item">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+        <p>Flexibilita</p>
+      </div>
+      <div class="grid-item">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        </svg>
+        <p>Přístupnost</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <h3>Rychlé odkazy</h3>
+      <ul>
+        <li><a href="#">Domů</a></li>
+        <li><a href="#">Kurzy</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="about-us">
+      <p>&copy; 2024 Go-English. Všechna práva vyhrazena.</p>
+    </div>
+    <div class="social-icons">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+    </div>
+  </footer>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var menu = document.querySelector("header");
+      var slider = document.querySelector(".header-slides");
+      var slides = document.querySelectorAll(".header-slide");
+      var slideIndex = 0;
+      var arrowLeft = document.querySelector(".arrow-left");
+      var arrowRight = document.querySelector(".arrow-right");
+      
+      window.addEventListener("scroll", function() {
+        if (window.scrollY > 50) {
+          menu.classList.add("menu-scrolled");
+        } else {
+          menu.classList.remove("menu-scrolled");
+        }
+      });
+      
+      function showSlide(index) {
+        slideIndex = (index + slides.length) % slides.length;
+        slider.style.transform = "translateX(" + (-slideIndex * 100) + "%)";
+      }
+      
+      arrowLeft.addEventListener("click", function() {
+        showSlide(slideIndex - 1);
+      });
+      
+      arrowRight.addEventListener("click", function() {
+        showSlide(slideIndex + 1);
+      });
+      
+      setInterval(function() {
+        showSlide(slideIndex + 1);
+      }, 5000); // Slide will change every 5 seconds
+    });
+  </script>
+</body>
+</html>

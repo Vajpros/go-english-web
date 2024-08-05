@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GO-ENGLISH: Naučte se anglicky!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 70px 0 0;
+      background-color: #ffffff;
+    }
+    header {
+      width: 100%;
+      background-color: #ff9fa0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center; /* Center align the header content */
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20px;
+      height: auto;
+      transition: opacity 0.3s;
+    }
+    .logo {
+      position: absolute;
+      left: 20px;
+    }
+    .logo img {
+      width: 50px;
+      height: auto;
+    }
+    .menu {
+      display: flex;
+      justify-content: center; /* Center align the menu */
+    }
+    .menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .menu ul li {
+      margin-right: 20px;
+      position: relative;
+    }
+    .menu ul li:last-child {
+      margin-right: 0;
+    }
+    .menu ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 18px;
+    }
+    .menu ul li ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      display: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu ul li:hover ul {
+      display: block;
+    }
+    .menu ul li ul li {
+      margin-top: 5px;
+    }
+    .menu ul li ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    footer {
+      background-color: #ff9fa0;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .about-us {
+      width: 100%;
+      text-align: center;
+      margin-top: 5px;
+      color: #ffffff;
+    }
+    .about-us p {
+      margin-top: 0;
+    }
+    .social-icons {
+      display: flex;
+      align-items: center;
+    }
+    .social-icons a {
+      color: white;
+      text-decoration: none;
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    .copyright {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+      color: #ffffff;
+    }
+    .main-content {
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: center;
+    }
+    .section-subtitle {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .section-content {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #666;
+    }
+    .section-content ul {
+      list-style-type: disc;
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    .section-content ul li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Vajprik-2.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <ul>
+        <li><a href="home.html">Domů</a></li>
+        <li><a href="#">Doučování</a>
+          <ul>
+            <li><a href="online.html">On-line</a></li>
+            <li><a href="maturita.html">Maturita</a></li>
+            <li><a href="cambridge.html">Cambridge</a></li>
+          </ul>
+        </li>
+        <li><a href="materialy.html">Materiály</a></li>
+        <li><a href="nas-tym.html">Náš tým</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="main-content">
+    <h2 class="section-title">Doučovací materiály</h2>
+    <div class="section-content">
+      <h3 class="section-subtitle">Naše materiály</h3>
+      <ul>
+        <li><strong>Materiály na samostatné učení:</strong> Pokud nemůžete být často aktivní během hodin z důvodu příprav na školu či jiných aktivit, poskytneme vám výukové materiály, které vám zaberou cca 30 minut denně.</li>
+        <li><strong>Oskenované dokumenty:</strong> Připravujeme nové materiály na každou hodinu a poskytujeme oskenované dokumenty, abyste se mohli efektivně připravovat.</li>
+        <li><strong>Zápisy z hodin:</strong> Pokud nemáte čas na vlastní poznámky, máme předpřipravené prezentace a zápisky, které vám můžeme zaslat.</li>
+      </ul>
+      <h3 class="section-subtitle">Učebnice a pracovní sešity</h3>
+      <ul>
+        <li><strong>Učebnice:</strong> Používáme učebnice přizpůsobené úrovni vaší angličtiny. Například pro úroveň B1 (maturitní úroveň) používáme témata na této úrovni.</li>
+        <li><strong>Pracovní sešity:</strong> Nepoužíváme pracovní sešity. Pracujeme pouze s učebnicemi a oskenovanými materiály.</li>
+      </ul>
+      <h3 class="section-subtitle">Typy vyučování</h3>
+      <ul>
+        <li><strong>On-line:</strong> On-line vyučování je flexibilní a umožňuje nám více hodin společně. Je to efektivní způsob, jak se učit bez nutnosti face-to-face setkání.</li>
+        <li><strong>Prezenční:</strong> Prezenční výuka face-to-face je také možná, ale preferujeme online výuku kvůli její flexibilitě a efektivitě.</li>
+      </ul>
+      <h3 class="section-subtitle">Podmínky a další informace</h3>
+      <ul>
+        <li>Pokud jste student třeba v Praze, preferujeme 90% online výuku a 10% osobní setkání. Vše závisí na vaší ochotě se učit.</li>
+        <li>Pokud nemáte zájem se učit, vyhrazujeme si právo ukončit spolupráci po zaplacení poslední výuky.</li>
+        <li>Jsme dva kluci, kteří chtějí naučit Čechy mluvit anglicky, ale máme také soukromý život. Prosíme o pochopení v případě jakýchkoliv nečekaných situací. Děkujeme!</li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <div class="about-us">
+      <h3>O nás</h3>
+      <p>Extrémně moc lidí nemluví anglicky. Tak jsme se rozhodli to změnit.<br>Dva kluci, toužící naučit Čechy mluvit anglicky.</p>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2024 GO-ENGLISH All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function handleScroll() {
+        const header = document.querySelector('header');
+        const scrollPosition = window.scrollY;
+
+        if (scrollPosition > 50) {
+          header.style.opacity = 0.7;
+        } else {
+          header.style.opacity = 1;
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll);
+    });
+  </script>
+</body>
+</html>
