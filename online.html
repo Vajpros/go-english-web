@@ -14,7 +14,7 @@
     }
     header {
       width: 100%;
-      background-color: #ff9fa0;
+      background-color: #305cde;
       position: fixed;
       top: 0;
       left: 0;
@@ -78,10 +78,29 @@
       font-size: 16px;
     }
     .content {
+      display: flex;
+      align-items: flex-start;
       padding: 20px;
       max-width: 800px;
       margin: 0 auto;
       box-sizing: border-box;
+    }
+    .content-image {
+      flex: 0 0 auto;
+      margin-right: 20px;
+    }
+    .content-image img {
+      width: 250px;
+      height: 100%;
+    }
+    .content-line {
+      flex: 0 0 auto;
+      width: 12px;
+      background-color: #305cde;
+      margin-right: 20px;
+    }
+    .content-text {
+      flex: 1 1 auto;
     }
     .content h1 {
       text-align: center;
@@ -102,7 +121,7 @@
       margin-bottom: 10px;
     }
     footer {
-      background-color: #ff9fa0;
+      background-color: #305cde;
       padding: 20px;
       text-align: center;
       color: white;
@@ -157,11 +176,11 @@
 <body>
   <header id="header">
     <div class="logo">
-      <img src="Vajprik-2.png" alt="Logo">
+      <img src="GO-5.png" alt="Logo">
     </div>
     <div class="menu">
       <ul>
-        <li><a href="home.html">Domů</a></li>
+        <li><a href="index.html">Domů</a></li>
         <li><a href="#">Doučování</a>
             <ul>
                 <li><a href="online.html">On-line</a></li>
@@ -176,25 +195,31 @@
     </div>
   </header>
   <div class="content">
-    <h1>Online Výuka Angličtiny</h1>
-    <p>Na GO-ENGLISH věříme, že každý má možnost naučit se anglicky odkudkoliv a kdykoliv. Proto nabízíme komplexní online výuku, která je přizpůsobena vašim potřebám a časovým možnostem. Naše online kurzy jsou navrženy tak, aby vám poskytly maximální flexibilitu a efektivitu při učení.</p>
-    
-    <h2>Výhody Online Výuky</h2>
-    <ul>
-      <li><strong>Flexibilita:</strong> Učte se kdykoliv a odkudkoliv, podle svého vlastního tempa.</li>
-      <li><strong>Individuální přístup:</strong> Naše kurzy jsou přizpůsobeny vašim potřebám a úrovni angličtiny.</li>
-      <li><strong>Špičkoví lektoři:</strong> Naši lektoři jsou zkušení odborníci s vášní pro výuku angličtiny.</li>
-      <li><strong>Interaktivní lekce:</strong> Využíváme moderní technologie pro zajištění interaktivní a zábavné výuky.</li>
-      <li><strong>Dostupnost materiálů:</strong> Přístup k široké škále výukových materiálů, které jsou k dispozici 24/7.</li>
-    </ul>
-    
-    <h2>Jak To Funguje</h2>
-    <p>Naše online výuka probíhá prostřednictvím videohovorů, kde se můžete spojit s našimi lektory v reálném čase. Můžete se účastnit skupinových lekcí nebo si domluvit individuální lekce, které jsou zcela přizpůsobeny vašim potřebám. Každá lekce je pečlivě plánována a zaměřuje se na rozvoj všech čtyř jazykových dovedností – poslech, mluvení, čtení a psaní.</p>
-    
-    <h2>Jak Začít</h2>
-    <p>Začít je snadné! Stačí nás kontaktovat a domluvit si úvodní konzultaci, kde společně zjistíme vaše potřeby a cíle. Na základě toho vám doporučíme vhodný kurz a lektora.</p>
-    
-    <p>Pro více informací nás kontaktujte na <a href="mailto:dylan.prachar@icloud.com">dylan.prachar@icloud.com</a> nebo nám zavolejte na <a href="tel:+420777491426">+420 777 491 426</a>. Těšíme se na vás!</p>
+    <div class="content-image">
+      <img src="GO ENGLISH-5.png" alt="Image">
+    </div>
+    <div class="content-line"></div>
+    <div class="content-text">
+      <h1>Online Výuka Angličtiny</h1>
+      <p>Na GO-ENGLISH věříme, že každý má možnost naučit se anglicky odkudkoliv a kdykoliv. Proto nabízíme komplexní online výuku, která je přizpůsobena vašim potřebám a časovým možnostem. Naše online kurzy jsou navrženy tak, aby vám poskytly maximální flexibilitu a efektivitu při učení.</p>
+      
+      <h2>Výhody Online Výuky</h2>
+      <ul>
+        <li><strong>Flexibilita:</strong> Učte se kdykoliv a odkudkoliv, podle svého vlastního tempa.</li>
+        <li><strong>Individuální přístup:</strong> Naše kurzy jsou přizpůsobeny vašim potřebám a úrovni angličtiny.</li>
+        <li><strong>Špičkoví lektoři:</strong> Naši lektoři jsou zkušení odborníci s vášní pro výuku angličtiny.</li>
+        <li><strong>Interaktivní lekce:</strong> Využíváme moderní technologie pro zajištění interaktivní a zábavné výuky.</li>
+        <li><strong>Dostupnost materiálů:</strong> Přístup k široké škále výukových materiálů, které jsou k dispozici 24/7.</li>
+      </ul>
+      
+      <h2>Jak To Funguje</h2>
+      <p>Naše online výuka probíhá prostřednictvím videohovorů, kde se můžete spojit s našimi lektory v reálném čase. Můžete se účastnit skupinových lekcí nebo si domluvit individuální lekce, které jsou zcela přizpůsobeny vašim potřebám. Každá lekce je pečlivě plánována a zaměřuje se na rozvoj všech čtyř jazykových dovedností – poslech, mluvení, čtení a psaní.</p>
+      
+      <h2>Jak Začít</h2>
+      <p>Začít je snadné! Stačí nás kontaktovat a domluvit si úvodní konzultaci, kde společně zjistíme vaše potřeby a cíle. Na základě toho vám doporučíme vhodný kurz a lektora.</p>
+      
+      <p>Pro více informací nás kontaktujte na <a href="mailto:dylan.prachar@icloud.com">dylan.prachar@icloud.com</a> nebo nám zavolejte na <a href="tel:+420777491426">+420 777 491 426</a>. Těšíme se na vás!</p>
+    </div>
   </div>
   <footer>
     <div class="about-us">
